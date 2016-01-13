@@ -1,0 +1,237 @@
+#!/usr/bin/env python
+
+# Nicolas Gallardo
+# EP2
+# 11/19/2015
+# This program allows the Bebop drone to be controled by the user using the computers
+# keyboard. The user is prompted with the key functions.
+###
+###
+###
+
+import roslib; roslib.load_manifest('teleop_twist_keyboard')
+import rospy 
+from std_msgs.msg import Empty
+
+from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Point
+
+import sys, select, termios, tty
+
+#initVL = 0
+
+msg = """
+Reading from the keyboard  and Publishing to Bebop!
+---------------------------
+Takeoff/Land: t/y
+
+Moving around:
+  w 
+a-s-d
+
+Rotate: q/e ---> left/right
+
+Pan Camera:
+  i
+j-k-l
+
+Move Virtual Leader:
+  t
+f-g-h
+
+CTRL-C to quit
+
+"""
+
+moveX = {
+	'w':(.6,0),
+	's':(-.6,0),
+}
+
+moveY = {
+	'd':(-.6,0),
+	'a':(.6,0),
+}
+
+moveZ = {
+	'=':(.6,0),
+	'-':(-.6,0),
+}
+		  
+rotZ = {
+	'q':(-.5,0),
+	'e':(.5,0),
+}	  
+
+speedBindings = {
+	'r':(1.1,0),
+#	'f':(.9,0),
+}		  
+
+camYBindings = {
+	'i':(2,0),
+	'k':(-2,0),
+}
+	
+camZBindings = {
+	'l':(2,0),
+	'j':(-2,0),
+}
+
+cspeedBindings = {
+	'o':(1.1,0),
+	'u':(.9,0),
+}
+
+vlYBindings = {
+	't':(-1,0),
+	'g':(1,0),
+}
+
+vlXBindings = {
+	'h':(1,0),
+	'f':(-1,0),
+}
+
+
+def callback(data):
+	global initVL
+	global vlX
+	global vlY
+	#print 'callback recieved'
+	initVL = 1
+	#print initVL
+	vlX = data.x
+	vlY = (data.y)*-1.0
+
+def getKey():
+	tty.setraw(sys.stdin.fileno())
+	select.select([sys.stdin], [], [], 0)
+	key = sys.stdin.read(1)
+	termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+	return key
+
+speed = .2
+camSpeed = 1.5
+turn = 1
+initVL = 0
+
+def vels(speed,turn):
+	return "currently:\tspeed %s\tturn %s " % (speed,turn)
+
+if __name__=="__main__":
+	settings = termios.tcgetattr(sys.stdin)
+	
+	pub = rospy.Publisher('/bebop/cmd_vel', Twist)
+	pub1 = rospy.Publisher('/bebop/camera_control', Twist)
+	pub2 = rospy.Publisher('/bebop/takeoff', Empty)
+	pub3 = rospy.Publisher('/bebop/land', Empty)
+	pub4 = rospy.Publisher('/formation_control/VLPosition', Point)
+	sub = rospy.Subscriber('/formation_control/initVL', Point, callback)
+	rospy.init_node('teleop_twist_keyboard')
+
+	x = 0
+	y = 0
+	z = 0
+	th = 0
+	camY = 0
+	camZ = 0
+	vlX = 0
+	vlY = 0
+	#int initVL
+	status = 0
+
+	try:
+		print msg
+		print vels(speed,turn)
+		while(1):
+			key = getKey()
+			if key in moveX.keys():
+				x = moveX[key][0]
+				twist = Twist()
+				twist.linear.x = x*speed; twist.linear.y = 0; twist.linear.z = 0
+				twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
+				pub.publish(twist)
+			elif key in moveY.keys():
+				y = moveY[key][0]
+				twist = Twist()
+				twist.linear.x = 0; twist.linear.y = y*speed; twist.linear.z = 0
+				twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
+				pub.publish(twist)
+			elif key in moveZ.keys():
+				z = moveZ[key][0]
+				twist = Twist()
+				twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = z*speed
+				twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
+				pub.publish(twist)
+			elif key in rotZ.keys():
+				th = rotZ[key][0]
+				twist = Twist()
+				twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = th*turn
+				twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
+				pub.publish(twist)
+			elif key in speedBindings.keys():
+				speed = speed * speedBindings[key][0]
+				turn = turn * speedBindings[key][0]
+				print vels(speed,turn)
+				if (status == 14):
+					print msg
+				status = (status + 1) % 15
+			elif key in camYBindings.keys():
+				camY = camY + camYBindings[key][0]
+				twist = Twist()
+				twist.angular.x = 0; twist.angular.y = camY*camSpeed; twist.angular.z = camZ*camSpeed
+				twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
+				pub1.publish(twist)
+			elif key in camZBindings.keys():
+				camZ = camZ + camZBindings[key][0]
+				twist = Twist()
+				twist.angular.x = 0; twist.angular.y = camY*camSpeed; twist.angular.z = camZ*camSpeed
+				twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
+				pub1.publish(twist)
+			elif key in cspeedBindings.keys():
+				camSpeed = camSpeed * cspeedBindings[key][0]
+			elif key in vlYBindings.keys():
+				#print initVL
+				if initVL == 1:
+					point = Point()
+					vlY = vlY + vlYBindings[key][0]
+					point.x = vlX
+					point.y = vlY
+					pub4.publish(point)
+			elif key in vlXBindings.keys():
+				#print initVL
+				if initVL == 1:
+					point = Point()
+					vlX = vlX + vlXBindings[key][0]
+					point.x = vlX
+					point.y = vlY
+					pub4.publish(point)				
+			elif key == 'y':
+				empty = Empty()
+				pub3.publish(empty)
+			elif key == 't':
+				empty = Empty()
+				pub2.publish(empty)
+			else:
+				twist = Twist()
+				twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
+				twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0			
+				if (key == '\x03'):
+					break
+			rospy.sleep(0.075)	
+			twist = Twist()
+			twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
+			twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
+			pub.publish(twist)
+	except:
+		print e
+	finally:
+		twist = Twist()
+		twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
+		twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
+		pub.publish(twist)
+
+    		termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+
+
