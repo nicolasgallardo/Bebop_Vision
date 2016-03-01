@@ -1,0 +1,36 @@
+---------ON ROS MASTER (YOUR COMPUTER)-----------
+
+bebop driver:
+
+roslaunch bebop_driver bebop_node.launch 
+
+-----------------ON KOBUKI-----------------------
+
+launch the kobuki:
+
+roslaunch kobuki_node minimal.launch
+
+angle feedback:
+
+rosrun kobuki_controller controller.py
+
+---------BACK TO ROS MASTER (YOUR COMPUTER)------
+
+color tracking:
+
+rosrun bebop_vision bebop_color_track_node 
+
+view video feed:
+
+rqt -s rqt_image_view
+
+keyboard controller:
+
+rosrun bebop_vision teleop_twist_keyboard.py
+
+formation control:
+
+rosrun bebop_vision formation_control
+
+
+

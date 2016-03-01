@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/devel
+
+Name: simple_navigation_goals_tutorial
+Description: Description of simple_navigation_goals_tutorial
+Version: 0.2.1
+Cflags: 
+Libs: -L/home/robot/bebop_ws/devel/lib 
+Requires: 

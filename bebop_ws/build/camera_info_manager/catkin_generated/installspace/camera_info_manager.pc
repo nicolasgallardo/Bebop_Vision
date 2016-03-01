@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/install
+
+Name: camera_info_manager
+Description: Description of camera_info_manager
+Version: 1.11.10
+Cflags: -I/home/robot/bebop_ws/install/include -I/usr/include
+Libs: -L/home/robot/bebop_ws/install/lib -lcamera_info_manager
+Requires: roscpp sensor_msgs

@@ -1,0 +1,18 @@
+[[36mimage_transport_tutorial[0m] [1m[34m==>[0m '[1m/home/robot/bebop_ws/build/image_transport_tutorial/build_env.sh /usr/bin/make cmake_check_build_system[0m' [30m[1min[0m '[1m/home/robot/bebop_ws/build/image_transport_tutorial[0m'[0m
+[[36mimage_transport_tutorial[0m] [32m<==[0m '[1m/home/robot/bebop_ws/build/image_transport_tutorial/build_env.sh /usr/bin/make cmake_check_build_system[0m' finished with return code '[1m0[0m'[0m
+[[36mimage_transport_tutorial[0m] [1m[34m==>[0m '[1m/home/robot/bebop_ws/build/image_transport_tutorial/build_env.sh /usr/bin/make --jobserver-fds=3,5 -j[0m' [30m[1min[0m '[1m/home/robot/bebop_ws/build/image_transport_tutorial[0m'[0m
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target _image_transport_tutorial_generate_messages_check_deps_ResizedImage
+[  8%] [34m[1mCompiling Java code for image_transport_tutorial
+[0m[  8%] Built target sensor_msgs_generate_messages_py
+[ 16%] Built target my_publisher
+[ 25%] Built target image_transport_tutorial_generate_messages_java_gradle
+[ 33%] Built target my_subscriber
+[ 58%] Built target resized_publisher
+[ 66%] Built target image_transport_tutorial_generate_messages_cpp
+[ 75%] Built target image_transport_tutorial_generate_messages_java
+[ 83%] Built target image_transport_tutorial_generate_messages_lisp
+[100%] Built target image_transport_tutorial_generate_messages_py
+[100%] Built target image_transport_tutorial_generate_messages
+[[36mimage_transport_tutorial[0m] [32m<==[0m '[1m/home/robot/bebop_ws/build/image_transport_tutorial/build_env.sh /usr/bin/make --jobserver-fds=3,5 -j[0m' finished with return code '[1m0[0m'[0m

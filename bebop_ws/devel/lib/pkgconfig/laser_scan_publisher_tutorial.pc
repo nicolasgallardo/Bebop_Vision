@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/devel
+
+Name: laser_scan_publisher_tutorial
+Description: Description of laser_scan_publisher_tutorial
+Version: 0.2.1
+Cflags: 
+Libs: -L/home/robot/bebop_ws/devel/lib 
+Requires: 

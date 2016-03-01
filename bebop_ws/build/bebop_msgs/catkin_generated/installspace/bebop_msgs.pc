@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/install
+
+Name: bebop_msgs
+Description: Description of bebop_msgs
+Version: 0.3.0
+Cflags: -I/home/robot/bebop_ws/install/include
+Libs: -L/home/robot/bebop_ws/install/lib 
+Requires: message_runtime std_msgs

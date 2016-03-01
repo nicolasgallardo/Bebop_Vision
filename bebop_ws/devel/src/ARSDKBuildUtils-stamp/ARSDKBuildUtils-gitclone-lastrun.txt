@@ -1,0 +1,3 @@
+repository='https://github.com/ARDroneSDK3/ARSDKBuildUtils.git'
+module=''
+tag=''

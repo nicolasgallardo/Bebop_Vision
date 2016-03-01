@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/devel
+
+Name: image_transport_tutorial
+Description: Description of image_transport_tutorial
+Version: 0.0.0
+Cflags: -I/home/robot/bebop_ws/devel/include
+Libs: -L/home/robot/bebop_ws/devel/lib 
+Requires: 

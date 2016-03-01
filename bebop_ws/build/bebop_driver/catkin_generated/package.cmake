@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "bebop_driver")
+set(bebop_driver_MAINTAINER "Mani Monajjemi <mmonajje@sfu.ca>")
+set(bebop_driver_DEPRECATED "")
+set(bebop_driver_VERSION "0.3.0")
+set(bebop_driver_BUILD_DEPENDS "git" "wget" "java" "automake" "autoconf" "libtool" "yasm" "nasm" "zlib" "unzip" "bebop_msgs" "pkg-config" "nodelet" "camera_info_manager" "image_transport" "nav_msgs" "roscpp" "std_msgs" "tf" "ffmpeg" "dynamic_reconfigure" "roslint")
+set(bebop_driver_RUN_DEPENDS "bebop_msgs" "nodelet" "camera_info_manager" "image_transport" "nav_msgs" "roscpp" "std_msgs" "tf" "ffmpeg" "dynamic_reconfigure")
+set(bebop_driver_BUILDTOOL_DEPENDS "catkin")

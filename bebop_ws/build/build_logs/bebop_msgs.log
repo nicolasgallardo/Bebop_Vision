@@ -1,0 +1,74 @@
+[[36mbebop_msgs[0m] [1m[34m==>[0m '[1m/home/robot/bebop_ws/build/bebop_msgs/build_env.sh /usr/bin/make cmake_check_build_system[0m' [30m[1min[0m '[1m/home/robot/bebop_ws/build/bebop_msgs[0m'[0m
+[[36mbebop_msgs[0m] [32m<==[0m '[1m/home/robot/bebop_ws/build/bebop_msgs/build_env.sh /usr/bin/make cmake_check_build_system[0m' finished with return code '[1m0[0m'[0m
+[[36mbebop_msgs[0m] [1m[34m==>[0m '[1m/home/robot/bebop_ws/build/bebop_msgs/build_env.sh /usr/bin/make --jobserver-fds=3,5 -j[0m' [30m[1min[0m '[1m/home/robot/bebop_ws/build/bebop_msgs[0m'[0m
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonAccessoryStateAccessoryConfigChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateMassStorageInfoRemainingListChanged
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PilotingStateNavigateHomeStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCalibrationStateMagnetoCalibrationRequiredState
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonOverHeatStateOverHeatRegulationChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonHeadlightsStateintensityChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateMassStorageInfoStateListChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PilotingStateFlyingStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonMavlinkStateMavlinkPlayErrorStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PilotingStateAlertStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCalibrationStateMagnetoCalibrationStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PilotingStateSpeedChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3NetworkStateWifiAuthChannelListChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateCountryListKnown
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonAnimationsStateList
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3MediaRecordStatePictureStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PilotingStatePositionChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateMassStorageStateListChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PilotingStateAltitudeChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateProductModel
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateCurrentTimeChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonARLibsVersionsStateSkyControllerLibARCommandsVersion
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PilotingStateAttitudeChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PilotingStateAutoTakeOffModeChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateSensorsStatesListChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3MediaRecordStateVideoStateChangedV2
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonChargerStateMaxChargeRateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateWifiSignalChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonAccessoryStateSupportedAccessoriesListChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonChargerStateChargingInfo
+[  0%] [  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonOverHeatStateOverHeatChanged
+Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateBatteryStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3GPSStateNumberOfSatelliteChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonAudioStateAudioStreamingRunning
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonFlightPlanStateComponentStateListChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3AntiflickeringStatemodeChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3MediaRecordStatePictureStateChangedV2
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonARLibsVersionsStateControllerLibARCommandsVersion
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonChargerStateLastChargeRateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateCurrentDateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCalibrationStateMagnetoCalibrationAxisToCalibrateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3AntiflickeringStateelectricFrequencyChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCalibrationStateMagnetoCalibrationStartedChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonChargerStateCurrentChargeStateChanged
+[  0%] [  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonAccessoryStateAccessoryConfigModificationEnabled
+Built target _bebop_msgs_generate_messages_check_deps_Ardrone3CameraStateOrientation
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonFlightPlanStateAvailabilityStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PROStateFeatures
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonMavlinkStateMavlinkFilePlayingStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3PilotingStateFlatTrimChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3GPSStateHomeTypeAvailabilityChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3NetworkStateAllWifiScanChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3NetworkStateWifiScanListChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonARLibsVersionsStateDeviceLibARCommandsVersion
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3MediaRecordStateVideoStateChanged
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3GPSStateHomeTypeChosenChanged
+[  0%] [  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonControllerStateisPilotingChanged
+Built target std_msgs_generate_messages_cpp
+[  0%] Built target _bebop_msgs_generate_messages_check_deps_CommonCommonStateAllStatesChanged
+[  1%] [34m[1mCompiling Java code for bebop_msgs
+[0m[  1%] Built target std_msgs_generate_messages_lisp
+[  1%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3MediaStreamingStateVideoEnableChanged
+[  1%] Built target _bebop_msgs_generate_messages_check_deps_Ardrone3NetworkStateAllWifiAuthChannelChanged
+[  1%] Built target bebop_msgs_generate_messages_java
+[ 59%] [ 66%] Built target bebop_msgs_generate_messages_py
+Built target bebop_msgs_generate_messages_cpp
+[100%] Built target bebop_msgs_generate_messages_lisp
+[100%] Built target bebop_msgs_generate_messages_java_gradle
+[100%] Built target bebop_msgs_generate_messages
+[[36mbebop_msgs[0m] [32m<==[0m '[1m/home/robot/bebop_ws/build/bebop_msgs/build_env.sh /usr/bin/make --jobserver-fds=3,5 -j[0m' finished with return code '[1m0[0m'[0m

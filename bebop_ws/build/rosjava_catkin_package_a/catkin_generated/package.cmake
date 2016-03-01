@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "rosjava_catkin_package_a")
+set(rosjava_catkin_package_a_MAINTAINER "robot <robot@todo.todo>")
+set(rosjava_catkin_package_a_DEPRECATED "")
+set(rosjava_catkin_package_a_VERSION "0.1.0")
+set(rosjava_catkin_package_a_BUILD_DEPENDS "rosjava_build_tools")
+set(rosjava_catkin_package_a_RUN_DEPENDS )
+set(rosjava_catkin_package_a_BUILDTOOL_DEPENDS "catkin")

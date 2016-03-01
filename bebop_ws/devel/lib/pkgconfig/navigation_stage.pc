@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/devel
+
+Name: navigation_stage
+Description: Description of navigation_stage
+Version: 0.2.1
+Cflags: 
+Libs: -L/home/robot/bebop_ws/devel/lib 
+Requires: 

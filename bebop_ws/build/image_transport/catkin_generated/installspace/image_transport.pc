@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/install
+
+Name: image_transport
+Description: Description of image_transport
+Version: 1.11.10
+Cflags: -I/home/robot/bebop_ws/install/include
+Libs: -L/home/robot/bebop_ws/install/lib -limage_transport
+Requires: message_filters pluginlib rosconsole roscpp roslib sensor_msgs

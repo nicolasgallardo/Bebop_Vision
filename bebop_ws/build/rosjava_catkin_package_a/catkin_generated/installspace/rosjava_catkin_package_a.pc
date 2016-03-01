@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/install
+
+Name: rosjava_catkin_package_a
+Description: Description of rosjava_catkin_package_a
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/robot/bebop_ws/install/lib 
+Requires: 

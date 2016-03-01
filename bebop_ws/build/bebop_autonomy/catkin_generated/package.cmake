@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "bebop_autonomy")
+set(bebop_autonomy_MAINTAINER "Mani Monajjemi <mmonajje@sfu.ca>")
+set(bebop_autonomy_DEPRECATED "")
+set(bebop_autonomy_VERSION "0.3.0")
+set(bebop_autonomy_BUILD_DEPENDS )
+set(bebop_autonomy_RUN_DEPENDS "bebop_driver" "bebop_msgs" "bebop_tools")
+set(bebop_autonomy_BUILDTOOL_DEPENDS "catkin")

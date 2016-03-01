@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/install
+
+Name: bebop_vision
+Description: Description of bebop_vision
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robot/bebop_ws/install/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/robot/bebop_ws/devel
+
+Name: bebop_driver
+Description: Description of bebop_driver
+Version: 0.3.0
+Cflags: -I/home/robot/bebop_ws/devel/include -I/home/robot/bebop_ws/src/bebop_autonomy/bebop_driver/include
+Libs: -L/home/robot/bebop_ws/devel/lib -llibbebop -lbebop_driver_nodelet
+Requires: bebop_msgs roscpp nodelet camera_info_manager image_transport nav_msgs std_msgs tf dynamic_reconfigure

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Export-Package: image_transport_tutorial;version="0.0.0";uses:="org.ro
+ s.internal.message,sensor_msgs"
+Bundle-SymbolicName: org.ros.rosjava_messages.image_transport_tutorial
+Bundle-Version: 0.0.0
+Bundle-Name: image_transport_tutorial
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1454013634000
+Import-Package: org.ros.internal.message,sensor_msgs;version="[1.11,2)
+ "
+Created-By: 1.8.0_65 (Oracle Corporation)
+Tool: Bnd-2.1.0.20130426-122213
+

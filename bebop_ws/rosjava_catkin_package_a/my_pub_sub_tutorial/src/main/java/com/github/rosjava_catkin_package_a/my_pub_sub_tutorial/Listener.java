@@ -1,0 +1,155 @@
+/*
+ * Copyright (C) 2014 robot.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+/* Nicolas Gallardo
+ * EP2
+ * 11/19/2015
+ * 
+ * I used the listener tutorial as a base and added the mapping functionality to it.
+ * 
+ */
+
+package com.github.rosjava.rosjava_catkin_package_a.my_pub_sub_tutorial;
+
+import nav_msgs.Odometry;
+import geometry_msgs.Point;
+import org.apache.commons.logging.Log;
+import org.ros.message.MessageListener;
+import org.ros.namespace.GraphName;
+import org.ros.node.AbstractNodeMain;
+import org.ros.node.ConnectedNode;
+import org.ros.node.NodeMain;
+import org.ros.node.topic.Subscriber;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
+/**
+ * A simple {@link Subscriber} {@link NodeMain}.
+ */
+
+class CirclesDemo {
+
+    public CirclesDemo() {
+        JFrame frame = new JFrame();
+        frame.add(panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
+    private final DrawingPanel panel = new DrawingPanel();
+    
+    public void setVals(double x, double y){
+		int width = 5;
+        int height = width;
+        //System.out.println("x = " + x);
+        //System.out.println("y = " + y);
+		Circle circle = new Circle(x*39.37*2.0, -y*39.37*2.0, width, height);
+        panel.addCircle(circle);
+	}
+
+    class Circle {
+
+        double x, y;
+        int width, height;
+
+        public Circle(double x, double y, int width, int height) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+
+        public void draw(Graphics g) {
+            g.fillOval((int)y + 300, -((int)x) + 300, width, height);
+        }
+    }
+
+    class DrawingPanel extends JPanel {
+
+        List<Circle> circles = new ArrayList<>();
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            for (Circle circle : circles) {
+                circle.draw(g);
+            }
+        }
+
+        public void addCircle(Circle circle) {
+            circles.add(circle);
+            repaint();
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            return new Dimension(600, 600);
+        }
+    }
+}
+
+public class Listener extends AbstractNodeMain {
+  double posX, posY;
+  CirclesDemo circlesdemo = new CirclesDemo();
+  @Override
+  public GraphName getDefaultNodeName() {
+    return GraphName.of("rosjava/listener");
+  }
+  
+  
+  @Override
+  public void onStart(ConnectedNode connectedNode){
+    final Log log = connectedNode.getLog();
+    Subscriber<nav_msgs.Odometry> subscriber = connectedNode.newSubscriber("odom", nav_msgs.Odometry._TYPE);
+    Subscriber<nav_msgs.Odometry> subscriber1 = connectedNode.newSubscriber("/bebop_vision/position", geometry_msgs.Point._TYPE);
+    Subscriber<nav_msgs.Odometry> subscriber2 = connectedNode.newSubscriber("/formation_control/VLPosition", geometry_msgs.Point._TYPE);
+    subscriber.addMessageListener(new MessageListener<nav_msgs.Odometry>() {
+      @Override
+      public void onNewMessage(nav_msgs.Odometry message) {
+		//posX = message.getPose().getPose().getPosition().getX();
+		//posY = message.getPose().getPose().getPosition().getY();
+		//circlesdemo.setVals(posX,posY);
+		}
+    });
+    subscriber1.addMessageListener(new MessageListener<geometry_msgs.Point>() {
+      @Override
+      public void onNewMessage(geometry_msgs.Point message) {
+			
+		}
+    });
+    subscriber2.addMessageListener(new MessageListener<geometry_msgs.Point>() {
+      @Override
+      public void onNewMessage(geometry_msgs.Point message) {
+		posX = message.getPose().getPose().getPosition().getX();
+		posY = message.getPose().getPose().getPosition().getY();
+		circlesdemo.setVals(posX,posY);
+		}
+    });
+  }
+}
